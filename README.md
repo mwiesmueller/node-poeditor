@@ -25,7 +25,8 @@ const poconnect = require('poedit-connector');
 
 ## Use API Calls:
 
-### List ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_list))
+### List
+##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_list))
 
 ```
 const poconnect = require('poedit-connector');
