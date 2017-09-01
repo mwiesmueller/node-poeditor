@@ -1,0 +1,25 @@
+{
+  "name": "poedit-connector",
+  "version": "0.0.1",
+  "description": "A node module to send translations to the po editor api",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Martin Wiesmüller <martin.wiesmueller@werbas-ag.com> (werbasinnotec.com)",
+  "license": "MIT",
+  "dependencies": {
+    "flaschenpost": "0.15.6",
+    "processenv": "0.1.1",
+    "request": "2.81.0",
+    "require-dir": "0.3.2"
+  },
+  "devDependencies": {
+    "assertthat": "0.10.3",
+    "gulp": "3.9.1",
+    "gulp-coverage": "0.3.38",
+    "gulp-eslint": "4.0.0",
+    "gulp-mocha": "4.3.1",
+    "gulp-shell": "0.6.3"
+  }
+}
