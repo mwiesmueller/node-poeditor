@@ -15,6 +15,33 @@ npm i --save --save-exact poedit-connector
 You must have at least Node v8 installed since this module works with async await.
 
 
+### Use module in your project
+
+To use this module in your project it's necessary to require the module:
+
+```
+const poconnect = require('poedit-connector');
+```
+
+## Use API Calls:
+
+### [List](https://poeditor.com/docs/api#projects_list)
+
+```
+const poconnect = require('poedit-connector');
+const token = 'abcdef';
+
+(async () => {
+  try {
+    const res = await poconnect.list(token);
+
+    // res => { projects: [] };
+  } catch (err) {
+    // err => returns an error when failed
+  }
+})();
+```
+
 ## License
 
 The MIT License (MIT)

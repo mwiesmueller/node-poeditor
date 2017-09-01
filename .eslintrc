@@ -1,4 +1,12 @@
 {
+  "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 8,
+      "ecmaFeatures": {
+          "jsx": true,
+          "experimentalObjectRestSpread": true
+      }
+  },
  "env": {
    "amd": false,
    "browser": false,
@@ -14,32 +22,6 @@
  },
 
  "globals": {
- },
-
- "ecmaFeatures": {
-   "arrowFunctions": true,
-   "binaryLiterals": true,
-   "blockBindings": true,
-   "classes": true,
-   "defaultParams": true,
-   "destructuring": true,
-   "forOf": true,
-   "generators": true,
-   "globalReturn": false,
-   "jsx": true,
-   "modules": false,
-   "objectLiteralComputedProperties": true,
-   "objectLiteralDuplicateProperties": false,
-   "objectLiteralShorthandMethods": true,
-   "objectLiteralShorthandProperties": true,
-   "octalLiterals": true,
-   "regexUFlag": true,
-   "regexYFlag": true,
-   "restParams": true,
-   "spread": true,
-   "superInFunctions": true,
-   "templateStrings": true,
-   "unicodeCodePointEscapes": true
  },
 
  "rules": {
@@ -67,7 +49,7 @@
    "no-regex-spaces": 2,
    "no-reserved-keys": 0,
    "no-sparse-arrays": 2,
-   "no-unreachable": 2,
+   "no-unreachable": 0,
    "use-isnan": 2,
    "valid-jsdoc": 0,
    "valid-typeof": 2,
@@ -124,7 +106,7 @@
    "wrap-iife": [ 2, "inside" ],
    "yoda": [ 2, "never" ],
 
-   "strict": [ 2, "global" ],
+   "strict": [ 0, "global" ],
 
    "no-catch-shadow": 2,
    "no-delete-var": 2,
