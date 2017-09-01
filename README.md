@@ -1,5 +1,20 @@
 # poedit-connector
 
+This module is designed to connect the api from the [POEditor Service](https://poeditor.com). You can use the module in your own code as well with the CLI.
+
+## Getting Started
+
+### Install the module via npm
+
+```
+npm i --save --save-exact poedit-connector
+```
+
+### Requirements
+
+You must have at least Node v8 installed since this module works with async await.
+
+
 ## License
 
 The MIT License (MIT)
