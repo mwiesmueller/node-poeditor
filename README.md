@@ -79,6 +79,26 @@ const token = 'abcdef';
 
 This function will get all projects by your access token from the api and check if the project name alredy exist. Is it true, the function rejects an error.
 
+#### delete
+
+##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_delete)
+
+```
+const poconnect = require('poedit-connector');
+const token = 'abcdef';
+const id = '1234';
+
+(async () => {
+  try {
+    const res = await poconnect.projects.delete(token, id);
+
+    // res => true;
+  } catch (err) {
+    // err => returns an error when failed
+  }
+})();
+```
+
 ## License
 
 The MIT License (MIT)

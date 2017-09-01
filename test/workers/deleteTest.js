@@ -8,16 +8,16 @@ const workers = require(path.resolve('./lib'));
 
 let projectid;
 
-describe('projects.add...', () => {
+describe('projects.delete...', () => {
   it('... is of type function', (done) => {
-    assert.that(workers.projects.add).is.ofType('function');
+    assert.that(workers.projects.delete).is.ofType('function');
     done();
   });
 
   it('... rejects an error when function is called without a access token', (done) => {
     (async () => {
       try {
-        await workers.projects.add();
+        await workers.projects.delete();
       } catch (err) {
         assert.that(err).is.equalTo('Error: You must define a valid API Token!');
         done();
@@ -25,12 +25,12 @@ describe('projects.add...', () => {
     })();
   });
 
-  it('... rejects an error when function is called without a name for the project', (done) => {
+  it('... rejects an error when function is called without a id for the project', (done) => {
     (async () => {
       try {
-        await workers.projects.add('abcdef');
+        await workers.projects.delete('abcdef');
       } catch (err) {
-        assert.that(err).is.equalTo('Error: You must define a name for your new project!');
+        assert.that(err).is.equalTo('Error: You must define a valid project id!');
         done();
       }
     })();
@@ -39,7 +39,7 @@ describe('projects.add...', () => {
   it('... must fetch the api error messages', (done) => {
     (async () => {
       try {
-        await workers.projects.add('notfamoustoken', 'testproject');
+        await workers.projects.add('notfamoustoken', '1234');
       } catch (err) {
         assert.that(err).is.ofType('object');
         done();
@@ -47,10 +47,10 @@ describe('projects.add...', () => {
     })();
   });
 
-  it('... resolvse the project object when process is done', (done) => {
+  it('... add a TestProject to delete', (done) => {
     (async () => {
       try {
-        const res = await workers.projects.add(processenv('API_TOKEN'), 'testproject');
+        const res = await workers.projects.add(processenv('API_TOKEN'), 'deleteTest');
 
         assert.that(res).is.ofType('object');
         assert.that(res.project).is.not.undefined();
@@ -63,18 +63,7 @@ describe('projects.add...', () => {
     })();
   });
 
-  it('... must reject an error when project already famous in the api', (done) => {
-    (async () => {
-      try {
-        await workers.projects.add(processenv('API_TOKEN'), 'testproject');
-      } catch (err) {
-        assert.that(err).is.equalTo('Error: The named project is already famous in the PO Editor API.');
-        done();
-      }
-    })();
-  });
-
-  it('... delete the project that your account is clean', (done) => {
+  it('... resolves true when process is done', (done) => {
     (async () => {
       try {
         const res = await workers.projects.delete(processenv('API_TOKEN'), projectid);
