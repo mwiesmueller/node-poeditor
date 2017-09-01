@@ -60,7 +60,17 @@ const token = 'abcdef';
   try {
     const res = await poconnect.projects.add(token, name, description);
 
-    // res => { projects: [] };
+    // res => {  "project": {
+            "id": 7717,
+            "name": "Automobile",
+            "description": "",
+            "public": 0,
+            "open": 0,
+            "reference_language": "",
+            "terms": 0,
+            "created": "2014-08-13T09:39:32+0000"
+        }
+      };
   } catch (err) {
     // err => returns an error when failed
   }
