@@ -25,7 +25,10 @@ const poconnect = require('poedit-connector');
 
 ## Use API Calls:
 
-### List
+### Projects
+
+#### list
+
 ##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_list))
 
 ```
@@ -34,7 +37,7 @@ const token = 'abcdef';
 
 (async () => {
   try {
-    const res = await poconnect.list(token);
+    const res = await poconnect.projects.list(token);
 
     // res => { projects: [] };
   } catch (err) {
@@ -42,6 +45,29 @@ const token = 'abcdef';
   }
 })();
 ```
+
+#### add
+
+##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_add))
+
+```
+const poconnect = require('poedit-connector');
+const name = 'MyProjectName';
+const description = 'Some description to the project';
+const token = 'abcdef';
+
+(async () => {
+  try {
+    const res = await poconnect.projects.add(token, name, description);
+
+    // res => { projects: [] };
+  } catch (err) {
+    // err => returns an error when failed
+  }
+})();
+```
+
+This function will get all projects by your access token from the api and check if the project name alredy exist. Is it true, the function rejects an error.
 
 ## License
 
