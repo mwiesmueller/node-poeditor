@@ -46,6 +46,36 @@ const token = 'abcdef';
 })();
 ```
 
+#### view
+
+##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_view))
+
+```
+const poconnect = require('poedit-connector');
+const token = 'abcdef';
+const id = 12345;  // <= The unique identifier of the project. It's possible to get over function `list`.
+
+(async () => {
+  try {
+    const res = await poconnect.projects.view(token, id);
+
+    // res => {  "project": {
+            "id": 7717,
+            "name": "Automobile",
+            "description": "",
+            "public": 0,
+            "open": 0,
+            "reference_language": "",
+            "terms": 0,
+            "created": "2014-08-13T09:39:32+0000"
+        }
+      };
+  } catch (err) {
+    // err => returns an error when failed
+  }
+})();
+```
+
 #### add
 
 ##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_add))
