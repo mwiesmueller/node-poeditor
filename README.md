@@ -164,6 +164,50 @@ const id = '1234';
 })();
 ```
 
+#### sync
+
+##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_sync))
+
+```
+const poconnect = require('poedit-connector');
+const token = 'abcdef';
+const id = '1234';
+
+const terms = [
+ { term: 'I am a test term',
+   context: 'TestContext',
+   reference: 'Tests',
+   plural: 'I am some test terms',
+   comment: 'Some comment'
+ },
+ { term: 'Today is a nice day',
+   context: 'Outside of the office',
+   reference: 'Have Fun',
+   plural: 'I have nice days whole the year :-)',
+   comment: 'A comment again'
+ }
+];
+
+(async () => {
+  try {
+    const res = await poconnect.projects.sync(token, id, terms);
+
+    // res => "result": {
+        "terms": {
+            "parsed": 2,
+            "added": 2,
+            "updated": 0,
+            "deleted": 2446
+        }
+    };
+  } catch (err) {
+    // err => returns an error when failed
+  }
+})();
+```
+
+With this method it's possible to sync your terms in your project.
+
 ## License
 
 The MIT License (MIT)
