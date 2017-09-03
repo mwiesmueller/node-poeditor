@@ -238,6 +238,64 @@ const obj = {
 
 With this method it's possible to export your projects in your favorite language.
 
+
+## Use API Calls:
+
+### Languages
+
+#### available
+
+##### ([Click hier to see the api docs](https://poeditor.com/docs/api#languages_available))
+
+```
+const poconnect = require('poedit-connector');
+const token = 'abcdef';
+
+(async () => {
+  try {
+    const res = await poconnect.languages.available(token);
+
+    // res => { "languages": [
+            {
+                "name": "Abkhazian",
+                "code": "ab"
+            },
+            {
+                "name": "Afar",
+                "code": "aa"
+            },
+            {
+                "name": "Afrikaans",
+                "code": "af"
+            },
+            {
+                "name": "Akan",
+                "code": "ak"
+            },
+            {
+                "name": "Albanian",
+                "code": "sq"
+            },
+            {
+                "name": "Amharic",
+                "code": "am"
+            },
+            {
+                "name": "Arabic",
+                "code": "ar"
+            },
+            .
+            .
+            .
+            .
+            .
+   };
+  } catch (err) {
+    // err => returns an error when failed
+  }
+})();
+```
+
 ## License
 
 The MIT License (MIT)
