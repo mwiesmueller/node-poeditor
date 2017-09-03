@@ -46,6 +46,8 @@ const token = 'abcdef';
 })();
 ```
 
+This function will response all projects by your access token from the api and check if the project name alredy exist. Is it true, the function rejects an error.
+
 #### view
 
 ##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_view))
@@ -107,7 +109,40 @@ const token = 'abcdef';
 })();
 ```
 
-This function will get all projects by your access token from the api and check if the project name alredy exist. Is it true, the function rejects an error.
+#### update
+
+##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_update))
+
+```
+const poconnect = require('poedit-connector');
+
+const name = 'A new name for your project';
+const description = 'A new description for your project';
+const refLang = 'Set a new reference_language in your project';
+
+const token = 'abcdef';
+const id = 12345; // <= The unique identifier of your project.
+
+(async () => {
+  try {
+    const res = await poconnect.projects.add(token, id, { name, description, refLang });
+
+    // res => {  "project": {
+            "id": 7717,
+            "name": "Automobile",
+            "description": "",
+            "public": 0,
+            "open": 0,
+            "reference_language": "",
+            "terms": 0,
+            "created": "2014-08-13T09:39:32+0000"
+        }
+      };
+  } catch (err) {
+    // err => returns an error when failed
+  }
+})();
+```
 
 #### delete
 
