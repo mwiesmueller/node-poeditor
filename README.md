@@ -208,6 +208,36 @@ const terms = [
 
 With this method it's possible to sync your terms in your project.
 
+#### export
+
+##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_export))
+
+```
+const poconnect = require('poedit-connector');
+const token = 'abcdef';
+const id = '1234';
+const obj = {
+  language: 'de', // Define the language which you like to export
+  type: 'json', // Define the export type. Please read the options in the API documentation
+  tags: '["tag"]', //  Define your tags
+  filters: '["filters"] // Define your filters'
+};
+
+(async () => {
+  try {
+    const res = await poconnect.projects.export(token, id, obj);
+
+    // res => "result": {
+        "url": "https:\/\/api.poeditor.com\/v2\/download\/file\/b577a66ac39d82995debfabc016f855d"
+    };
+  } catch (err) {
+    // err => returns an error when failed
+  }
+})();
+```
+
+With this method it's possible to export your projects in your favorite language.
+
 ## License
 
 The MIT License (MIT)
