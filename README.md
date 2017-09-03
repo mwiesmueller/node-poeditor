@@ -81,7 +81,7 @@ This function will get all projects by your access token from the api and check 
 
 #### delete
 
-##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_delete)
+##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_delete))
 
 ```
 const poconnect = require('poedit-connector');
