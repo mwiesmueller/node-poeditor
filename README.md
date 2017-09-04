@@ -294,6 +294,10 @@ const token = 'abcdef';
 })();
 ```
 
+#### list
+
+##### ([Click hier to see the api docs](https://poeditor.com/docs/api#languages_list))
+
 ```
 const poconnect = require('node-poeditor');
 const token = 'abcdef';
@@ -326,9 +330,26 @@ const id = 1234;
 })();
 ```
 
-#### list
+#### add
 
-##### ([Click hier to see the api docs](https://poeditor.com/docs/api#languages_list))
+##### ([Click hier to see the api docs](https://poeditor.com/docs/api#languages_add))
+
+```
+const poconnect = require('node-poeditor');
+const token = 'abcdef';
+const id = 1234;
+const lang = 'de'
+
+(async () => {
+  try {
+    const res = await poconnect.languages.add(token, id, lang);
+
+    // res => true;
+  } catch (err) {
+    // err => returns an error when failed
+  }
+})();
+```
 
 ## License
 
