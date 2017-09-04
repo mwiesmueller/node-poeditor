@@ -1,4 +1,4 @@
-# poedit-connector
+# node-poeditor
 
 This module is designed to connect the api from the [POEditor Service](https://poeditor.com). You can use the module in your own code as well with the CLI.
 
@@ -7,7 +7,7 @@ This module is designed to connect the api from the [POEditor Service](https://p
 ### Install the module via npm
 
 ```
-npm i --save --save-exact poedit-connector
+npm i --save --save-exact node-poeditor
 ```
 
 ### Requirements
@@ -20,7 +20,7 @@ You must have at least Node v8 installed since this module works with async awai
 To use this module in your project it's necessary to require the module:
 
 ```
-const poconnect = require('poedit-connector');
+const poconnect = require('node-poeditor');
 ```
 
 ## Use API Calls:
@@ -32,7 +32,7 @@ const poconnect = require('poedit-connector');
 ##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_list))
 
 ```
-const poconnect = require('poedit-connector');
+const poconnect = require('node-poeditor');
 const token = 'abcdef';
 
 (async () => {
@@ -53,7 +53,7 @@ This function will response all projects by your access token from the api and c
 ##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_view))
 
 ```
-const poconnect = require('poedit-connector');
+const poconnect = require('node-poeditor');
 const token = 'abcdef';
 const id = 12345;  // <= The unique identifier of the project. It's possible to get over function `list`.
 
@@ -83,7 +83,7 @@ const id = 12345;  // <= The unique identifier of the project. It's possible to 
 ##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_add))
 
 ```
-const poconnect = require('poedit-connector');
+const poconnect = require('node-poeditor');
 const name = 'MyProjectName';
 const description = 'Some description to the project';
 const token = 'abcdef';
@@ -114,7 +114,7 @@ const token = 'abcdef';
 ##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_update))
 
 ```
-const poconnect = require('poedit-connector');
+const poconnect = require('node-poeditor');
 
 const name = 'A new name for your project';
 const description = 'A new description for your project';
@@ -149,7 +149,7 @@ const id = 12345; // <= The unique identifier of your project.
 ##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_delete))
 
 ```
-const poconnect = require('poedit-connector');
+const poconnect = require('node-poeditor');
 const token = 'abcdef';
 const id = '1234';
 
@@ -169,7 +169,7 @@ const id = '1234';
 ##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_sync))
 
 ```
-const poconnect = require('poedit-connector');
+const poconnect = require('node-poeditor');
 const token = 'abcdef';
 const id = '1234';
 
@@ -213,7 +213,7 @@ With this method it's possible to sync your terms in your project.
 ##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_export))
 
 ```
-const poconnect = require('poedit-connector');
+const poconnect = require('node-poeditor');
 const token = 'abcdef';
 const id = '1234';
 const obj = {
@@ -246,7 +246,7 @@ With this method it's possible to export your projects in your favorite language
 ##### ([Click hier to see the api docs](https://poeditor.com/docs/api#languages_available))
 
 ```
-const poconnect = require('poedit-connector');
+const poconnect = require('node-poeditor');
 const token = 'abcdef';
 
 (async () => {
@@ -295,7 +295,7 @@ const token = 'abcdef';
 ```
 
 ```
-const poconnect = require('poedit-connector');
+const poconnect = require('node-poeditor');
 const token = 'abcdef';
 const id = 1234;
 

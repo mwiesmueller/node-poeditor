@@ -1,5 +1,5 @@
 {
-  "name": "poedit-connector",
+  "name": "node-poeditor",
   "version": "0.0.1",
   "description": "A node module to send translations to the po editor api",
   "main": "lib/index.js",
