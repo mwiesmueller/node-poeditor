@@ -376,6 +376,86 @@ const lang = 'de'
 
 With this function it's possible to delete an language by project.
 
+### Terms
+
+#### &bull; list
+
+##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#languages_list))
+
+```
+const poconnect = require('node-poeditor');
+const token = 'abcdef';
+const id = 1234;
+
+(async () => {
+  try {
+    const res = await poconnect.terms.list(token, id);
+
+    // res => { "terms": [
+            {
+                "term": "app_name",
+                "context": "",
+                "plural": "",
+                "created": "2013-06-10T11:08:54+0000",
+                "updated": "",
+                "translation": {
+                    "content": "TODO List",
+                    "fuzzy": 0,
+                    "proofread": 1,
+                    "updated": "2013-06-12T11:08:54+0000"
+                },
+                "reference": "",
+                "tags": [
+                    "first_upload",
+                    "second_upload"
+                ],
+                "comment": "Don't translate the name of the app"
+            },
+            {
+                "term": "mark_as_unread",
+                "context": "",
+                "plural": "",
+                "created": "2013-06-10T11:08:54+0000",
+                "updated": "",
+                "translation": {
+                    "content": "",
+                    "fuzzy": 0,
+                    "proofread": 0,
+                    "updated": ""
+                },
+                "reference": "",
+                "tags": [
+                    "second_upload"
+                ],
+                "comment": ""
+            },
+            {
+                "term": "One Item",
+                "context": "",
+                "plural": "%d Items",
+                "created": "2013-06-10T11:24:12+0000",
+                "updated": "",
+                "translation": {
+                    "content": {
+                        "one": "",
+                        "other": ""
+                    },
+                    "fuzzy": 0,
+                    "proofread": 0,
+                    "updated": ""
+                },
+                "reference": "",
+                "tags": [],
+                "comment": ""
+            }
+        ]
+   };
+  } catch (err) {
+    // err => returns an error when failed
+  }
+})();
+```
+
 ## License
 
 The MIT License (MIT)
