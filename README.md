@@ -648,6 +648,45 @@ const id = 1234;
 })();
 ```
 
+#### &bull; add
+
+##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#contributors_add))
+
+```
+const poconnect = require('node-poeditor');
+const token = 'abcdef';
+const id = 1234;
+cosnt obj = {
+  name: 'Martin Wiesmüller',  // Required: Set the name of the contributor
+  email: 'm.wiesmueller@werbasinnotec.com', // Required: Set the email of the contributor
+  language: 'de', // Set the language for the contributor
+  admin: '1' // Set it to `1` when you like that the contributor is an administrator
+}
+
+(async () => {
+  try {
+    const res = await poconnect.contributors.add(token, id);
+
+    // res => { "contributors": [
+            {
+                "name": "final test",
+                "email": "email@example.com",
+                "permissions": [
+                    {
+                        "project": {
+                            "id": "4886",
+                            "name": "Twentytwelve"
+                        },
+                        "type": "administrator"
+                    }
+                ]
+            }
+        ]};
+  } catch (err) {
+    // err => returns an error when failed
+  }
+})();
+```
 
 ## License
 
