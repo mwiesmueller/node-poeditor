@@ -294,6 +294,42 @@ const token = 'abcdef';
 })();
 ```
 
+```
+const poconnect = require('poedit-connector');
+const token = 'abcdef';
+const id = 1234;
+
+(async () => {
+  try {
+    const res = await poconnect.languages.list(token, id);
+
+    // res => { "languages": [
+            {
+                "name": "English",
+                "code": "en",
+                "translations": 13,
+                "percentage": 12.5,
+                "updated": "2015-05-04T14:21:41+0000"
+            },
+            {
+                "name": "French",
+                "code": "fr",
+                "translations": 70,
+                "percentage": 68.75,
+                "updated": "2015-04-30T08:59:34+0000"
+            }
+        ]
+   };
+  } catch (err) {
+    // err => returns an error when failed
+  }
+})();
+```
+
+#### list
+
+##### ([Click hier to see the api docs](https://poeditor.com/docs/api#languages_list))
+
 ## License
 
 The MIT License (MIT)
