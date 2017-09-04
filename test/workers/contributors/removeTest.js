@@ -6,16 +6,16 @@ const processenv = require('processenv');
 
 const workers = require(path.resolve('./lib'));
 
-describe('contributors.list...', () => {
+describe('contributors.remove...', () => {
   it('... is of type function', (done) => {
-    assert.that(workers.contributors.list).is.ofType('function');
+    assert.that(workers.contributors.remove).is.ofType('function');
     done();
   });
 
   it('... rejects an error when function is called without a access token', (done) => {
     (async () => {
       try {
-        await workers.contributors.list();
+        await workers.contributors.remove();
       } catch (err) {
         assert.that(err).is.equalTo('Error: You must define a valid API Token!');
         done();
@@ -26,7 +26,7 @@ describe('contributors.list...', () => {
   it('... rejects an error when function is called without a id for the project', (done) => {
     (async () => {
       try {
-        await workers.contributors.list('abcdef');
+        await workers.contributors.remove('abcdef');
       } catch (err) {
         assert.that(err).is.equalTo('Error: You must define a valid project id!');
         done();
@@ -34,12 +34,12 @@ describe('contributors.list...', () => {
     })();
   });
 
-  it('... rejects an error when function is called without a valid languagecode', (done) => {
+  it('... rejects an error when function is called without a valid object', (done) => {
     (async () => {
       try {
-        await workers.contributors.list('abcdef', '12345');
+        await workers.contributors.remove('abcdef', '12345');
       } catch (err) {
-        assert.that(err).is.equalTo('Error: You must define a valid languagecode!');
+        assert.that(err).is.equalTo('Error: You must define a valid object!');
         done();
       }
     })();
@@ -48,7 +48,7 @@ describe('contributors.list...', () => {
   it('... must fetch the api error messages', (done) => {
     (async () => {
       try {
-        await workers.contributors.list('notfamoustoken', '1234', 'de');
+        await workers.contributors.remove('notfamoustoken', '1234', { name: 'Caesar', email: processenv('TEST_EMAIL') });
       } catch (err) {
         assert.that(err).is.ofType('object');
         done();
@@ -56,13 +56,16 @@ describe('contributors.list...', () => {
     })();
   });
 
-  it('... must resolve all contributors from the project when process is done', (done) => {
+  it('... must resolve all true when contributor is removed', (done) => {
     (async () => {
       try {
-        const add = await workers.projects.add(processenv('API_TOKEN'), 'listContrib');
-        const res = await workers.contributors.list(processenv('API_TOKEN'), add.project.id, 'de');
+        const add = await workers.projects.add(processenv('API_TOKEN'), 'removeContrib');
 
-        assert.that(res.contributors).is.not.undefined();
+        await workers.contributors.add(processenv('API_TOKEN'), add.project.id, { name: 'Caesar', email: processenv('TEST_EMAIL'), admin: '1' });
+
+        const res = await workers.contributors.remove(processenv('API_TOKEN'), add.project.id, { email: processenv('TEST_EMAIL') });
+
+        assert.that(res).is.true();
         await workers.projects.delete(processenv('API_TOKEN'), add.project.id);
         done();
       } catch (err) {

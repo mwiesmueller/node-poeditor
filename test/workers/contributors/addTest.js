@@ -56,10 +56,10 @@ describe('contributors.add...', () => {
     })();
   });
 
-  it('... must resolve all languages from the project when process is done', (done) => {
+  it('... must resolve true when contributor is added', (done) => {
     (async () => {
       try {
-        const add = await workers.projects.add(processenv('API_TOKEN'), 'listContrib');
+        const add = await workers.projects.add(processenv('API_TOKEN'), 'addContrib');
         const res = await workers.contributors.add(processenv('API_TOKEN'), add.project.id, { name: 'Caesar', email: 'm.wiesmueller@werbasinnotec.com', admin: '1' });
 
         assert.that(res).is.true();

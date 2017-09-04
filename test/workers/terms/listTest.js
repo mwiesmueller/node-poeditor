@@ -45,7 +45,7 @@ describe('terms.list...', () => {
     })();
   });
 
-  it('... must resolve all languages from the project when process is done', (done) => {
+  it('... must resolve all terms from the project when process is done', (done) => {
     (async () => {
       try {
         const add = await workers.projects.add(processenv('API_TOKEN'), 'listTerms');

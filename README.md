@@ -667,21 +667,32 @@ cosnt obj = {
   try {
     const res = await poconnect.contributors.add(token, id);
 
-    // res => { "contributors": [
-            {
-                "name": "final test",
-                "email": "email@example.com",
-                "permissions": [
-                    {
-                        "project": {
-                            "id": "4886",
-                            "name": "Twentytwelve"
-                        },
-                        "type": "administrator"
-                    }
-                ]
-            }
-        ]};
+    // res => true;
+  } catch (err) {
+    // err => returns an error when failed
+  }
+})();
+```
+
+#### &bull; remove
+
+##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#contributors_remove))
+
+```
+const poconnect = require('node-poeditor');
+const token = 'abcdef';
+const id = 1234;
+cosnt obj = {
+  name: 'Martin Wiesmüller',  // Required: Set the name of the contributor
+  email: 'm.wiesmueller@werbasinnotec.com', // Required: Set the email of the contributor
+  language: 'en'
+}
+
+(async () => {
+  try {
+    const res = await poconnect.contributors.remove(token, id);
+
+    // res => res => true;
   } catch (err) {
     // err => returns an error when failed
   }
