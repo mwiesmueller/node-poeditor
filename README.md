@@ -27,9 +27,9 @@ const poconnect = require('node-poeditor');
 
 ### Projects
 
-#### list
+#### &bull; list
 
-##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_list))
+##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_list))
 
 ```
 const poconnect = require('node-poeditor');
@@ -48,9 +48,9 @@ const token = 'abcdef';
 
 This function will response all projects by your access token from the api and check if the project name alredy exist. Is it true, the function rejects an error.
 
-#### view
+#### &bull; view
 
-##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_view))
+##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_view))
 
 ```
 const poconnect = require('node-poeditor');
@@ -78,9 +78,9 @@ const id = 12345;  // <= The unique identifier of the project. It's possible to 
 })();
 ```
 
-#### add
+#### &bull; add
 
-##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_add))
+##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_add))
 
 ```
 const poconnect = require('node-poeditor');
@@ -109,9 +109,9 @@ const token = 'abcdef';
 })();
 ```
 
-#### update
+#### &bull; update
 
-##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_update))
+##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_update))
 
 ```
 const poconnect = require('node-poeditor');
@@ -144,9 +144,9 @@ const id = 12345; // <= The unique identifier of your project.
 })();
 ```
 
-#### delete
+#### &bull; delete
 
-##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_delete))
+##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_delete))
 
 ```
 const poconnect = require('node-poeditor');
@@ -164,9 +164,9 @@ const id = '1234';
 })();
 ```
 
-#### sync
+#### &bull; sync
 
-##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_sync))
+##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_sync))
 
 ```
 const poconnect = require('node-poeditor');
@@ -208,9 +208,9 @@ const terms = [
 
 With this method it's possible to sync your terms in your project.
 
-#### export
+#### &bull; export
 
-##### ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_export))
+##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_export))
 
 ```
 const poconnect = require('node-poeditor');
@@ -241,9 +241,9 @@ With this method it's possible to export your projects in your favorite language
 
 ### Languages
 
-#### available
+#### &bull; available
 
-##### ([Click hier to see the api docs](https://poeditor.com/docs/api#languages_available))
+##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#languages_available))
 
 ```
 const poconnect = require('node-poeditor');
@@ -294,9 +294,9 @@ const token = 'abcdef';
 })();
 ```
 
-#### list
+#### &bull; list
 
-##### ([Click hier to see the api docs](https://poeditor.com/docs/api#languages_list))
+##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#languages_list))
 
 ```
 const poconnect = require('node-poeditor');
@@ -330,9 +330,9 @@ const id = 1234;
 })();
 ```
 
-#### add
+#### &bull; add
 
-##### ([Click hier to see the api docs](https://poeditor.com/docs/api#languages_add))
+##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#languages_add))
 
 ```
 const poconnect = require('node-poeditor');
@@ -350,6 +350,8 @@ const lang = 'de'
   }
 })();
 ```
+
+With this method it's possible to add a additional language to an exist project. You cann fetch the languagecodes over the method `list`
 
 ## License
 
