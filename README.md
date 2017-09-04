@@ -560,6 +560,58 @@ const terms = [
 
 ```
 
+#### &bull; delete
+
+##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#terms_delete))
+
+```
+const poconnect = require('node-poeditor');
+const token = 'abcdef';
+const id = 1234;
+const terms = [
+    {
+        "term": "Add new list",
+        "context": "",
+        "reference": "\/projects",
+        "plural": "",
+        "comment": ""
+    },
+    {
+        "term": "one project found",
+        "context": "",
+        "reference": "\/projects",
+        "plural": "%d projects found",
+        "comment": "Make sure you translate the plural forms",
+        "tags": [
+            "first_tag",
+            "second_tag"
+        ]
+    },
+    {
+        "term": "Show all projects",
+        "context": "",
+        "reference": "\/projects",
+        "plural": "",
+        "tags": "just_a_tag"
+    }
+];
+
+(async () => {
+  try {
+    const res = await poconnect.terms.delete(token, id, terms);
+
+    // res => {
+        "terms": {
+            "parsed": 1,
+            "added": 1
+        };
+  } catch (err) {
+    // err => returns an error when failed
+  }
+})();
+
+```
+
 ## License
 
 The MIT License (MIT)
