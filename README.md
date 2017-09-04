@@ -699,6 +699,16 @@ cosnt obj = {
 })();
 ```
 
+## You like to fork it??
+
+When you like to fork, you must set some ENV Variables to running the tests.
+
+Running tests:
+
+```
+API_TOKEN=<your API Token> TEST_EMAIL=<your emailaddress to test> gulp test
+```
+
 ## License
 
 The MIT License (MIT)
