@@ -380,7 +380,7 @@ With this function it's possible to delete an language by project.
 
 #### &bull; list
 
-##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#languages_list))
+##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#terms_list))
 
 ```
 const poconnect = require('node-poeditor');
@@ -454,6 +454,58 @@ const id = 1234;
     // err => returns an error when failed
   }
 })();
+```
+
+#### &bull; add
+
+##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#terms_add))
+
+```
+const poconnect = require('node-poeditor');
+const token = 'abcdef';
+const id = 1234;
+const terms = [
+    {
+        "term": "Add new list",
+        "context": "",
+        "reference": "\/projects",
+        "plural": "",
+        "comment": ""
+    },
+    {
+        "term": "one project found",
+        "context": "",
+        "reference": "\/projects",
+        "plural": "%d projects found",
+        "comment": "Make sure you translate the plural forms",
+        "tags": [
+            "first_tag",
+            "second_tag"
+        ]
+    },
+    {
+        "term": "Show all projects",
+        "context": "",
+        "reference": "\/projects",
+        "plural": "",
+        "tags": "just_a_tag"
+    }
+];
+
+(async () => {
+  try {
+    const res = await poconnect.terms.add(token, id, terms);
+
+    // res => {
+        "terms": {
+            "parsed": 1,
+            "added": 1
+        };
+  } catch (err) {
+    // err => returns an error when failed
+  }
+})();
+
 ```
 
 ## License
