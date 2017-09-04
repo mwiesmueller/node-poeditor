@@ -10,6 +10,23 @@ This module is designed to connect the api from the [POEditor Service](https://p
 npm i --save --save-exact node-poeditor
 ```
 
+When you like to use the CLI:
+
+```
+npm i --save --save-exact -g node-poeditor
+```
+
+Then it's possible to call all methods with the `poeditor` command.
+
+#### CLI Arguments
+
+- --context: Defines the context of the module. `[ 'contributors', 'languages', 'projects', 'terms' ]`
+
+- --method: Defines the method in the context. See the API description.
+- --id: Defines the id of the project
+- --token: Defines the token to access the api.
+- --file: Defines the outPath for the file. Is empty the module will display the result in the console at once.
+
 ### Requirements
 
 You must have at least Node v8 installed since this module works with async await.
@@ -48,6 +65,12 @@ const token = 'abcdef';
 
 This function will response all projects by your access token from the api and check if the project name alredy exist. Is it true, the function rejects an error.
 
+##### Running by CLI Command:
+
+```
+poeditor --context=projects --method=list --token=<yourToken> --file=<yourFilePath>
+```
+
 #### &bull; view
 
 ##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_view))
@@ -76,6 +99,12 @@ const id = 12345;  // <= The unique identifier of the project. It's possible to 
     // err => returns an error when failed
   }
 })();
+```
+
+##### Running by CLI Command:
+
+```
+poeditor --context=projects --method=view --id=<projectid> --token=<yourToken> --file=<yourFilePath>
 ```
 
 #### &bull; add
@@ -701,7 +730,7 @@ cosnt obj = {
 
 ## You like to fork it??
 
-When you like to fork, you must set some ENV Variables to running the tests.
+When you like to fork this module, you must set some ENV Variables to running the tests.
 
 Running tests:
 
