@@ -353,6 +353,29 @@ const lang = 'de'
 
 With this method it's possible to add a additional language to an exist project. You cann fetch the languagecodes over the method `list`
 
+#### &bull; delete
+
+##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#languages_delete))
+
+```
+const poconnect = require('node-poeditor');
+const token = 'abcdef';
+const id = 1234;
+const lang = 'de'
+
+(async () => {
+  try {
+    const res = await poconnect.languages.delete(token, id, lang);
+
+    // res => true;
+  } catch (err) {
+    // err => returns an error when failed
+  }
+})();
+```
+
+With this function it's possible to delete an language by project.
+
 ## License
 
 The MIT License (MIT)
