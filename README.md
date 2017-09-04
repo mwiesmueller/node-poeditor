@@ -551,7 +551,7 @@ const terms = [
     // res => {
         "terms": {
             "parsed": 1,
-            "added": 1
+            "updated": 1
         };
   } catch (err) {
     // err => returns an error when failed
@@ -602,8 +602,8 @@ const terms = [
 
     // res => {
         "terms": {
-            "parsed": 1,
-            "added": 1
+            "parsed": 2,
+            "deleted": 2
         };
   } catch (err) {
     // err => returns an error when failed
@@ -611,6 +611,43 @@ const terms = [
 })();
 
 ```
+
+### Contributors
+
+#### &bull; list
+
+##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#contributors_list))
+
+```
+const poconnect = require('node-poeditor');
+const token = 'abcdef';
+const id = 1234;
+
+(async () => {
+  try {
+    const res = await poconnect.contributors.list(token, id);
+
+    // res => { "contributors": [
+            {
+                "name": "final test",
+                "email": "email@example.com",
+                "permissions": [
+                    {
+                        "project": {
+                            "id": "4886",
+                            "name": "Twentytwelve"
+                        },
+                        "type": "administrator"
+                    }
+                ]
+            }
+        ]};
+  } catch (err) {
+    // err => returns an error when failed
+  }
+})();
+```
+
 
 ## License
 
