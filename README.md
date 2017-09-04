@@ -239,8 +239,6 @@ const obj = {
 With this method it's possible to export your projects in your favorite language.
 
 
-## Use API Calls:
-
 ### Languages
 
 #### available
