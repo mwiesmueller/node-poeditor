@@ -60,7 +60,7 @@ describe('contributors.add...', () => {
     (async () => {
       try {
         const add = await workers.projects.add(processenv('API_TOKEN'), 'addContrib');
-        const res = await workers.contributors.add(processenv('API_TOKEN'), add.project.id, { name: 'Caesar', email: 'm.wiesmueller@werbasinnotec.com', admin: '1' });
+        const res = await workers.contributors.add(processenv('API_TOKEN'), add.project.id, { name: 'Caesar', email: processenv('TEST_EMAIL'), admin: '1', language: 'de' });
 
         assert.that(res).is.true();
         await workers.projects.delete(processenv('API_TOKEN'), add.project.id);

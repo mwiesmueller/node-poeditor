@@ -34,17 +34,6 @@ describe('contributors.list...', () => {
     })();
   });
 
-  it('... rejects an error when function is called without a valid languagecode', (done) => {
-    (async () => {
-      try {
-        await workers.contributors.list('abcdef', '12345');
-      } catch (err) {
-        assert.that(err).is.equalTo('Error: You must define a valid languagecode!');
-        done();
-      }
-    })();
-  });
-
   it('... must fetch the api error messages', (done) => {
     (async () => {
       try {
