@@ -20,12 +20,45 @@ Then it's possible to call all methods with the `poeditor` command.
 
 #### CLI Arguments
 
-- --context: Defines the context of the module. `[ 'contributors', 'languages', 'projects', 'terms' ]`
+```
+Optional arguments:
+  -h, --help            Show this help message and exit.
+  -v, --version         Show program's version number and exit.
+  -t TOKEN, --token TOKEN
+                        Set the token to access the PO Editor API. You can
+                        define it in your account-settings of PO Editor
+  -c CONTEXT, --context CONTEXT
+                        Set the context where you like to access. Available
+                        contexts are: contributors, languages, projects and
+                        terms
+  -m METHOD, --method METHOD
+                        Set the method where you like to access by the
+                        defined context. See API Specs: https://github.
+                        com/mwiesmueller/node-poeditor
+  -id PROJECTID, --projectid PROJECTID
+                        Define a projectid when its present in the context
+  -d DESCRIPTION, --description DESCRIPTION
+                        Set a description when its present in the context.
+  -n NAME, --name NAME  Set a name when its present in the context.
+  -o OBJECT, --object OBJECT
+                        Set a object when its present in the context.
+                        Attention: Set the Object as String!
+  -out OUTFILE, --outFile OUTFILE
+                        Define the file and path where the result will be
+                        write
+  -daf DATAFILE, --dataFile DATAFILE
+                        Define a JSON Data file for data. This argument will
+                        disable the --data argument!
+  -da DATA, --data DATA
+                        Set a data object when its present in the object!
+  -l LANG, --lang LANG  Set a languagecode when its present in the context
+  -e EMAIL, --email EMAIL
+                        Set a email address (Only for contributors method)
+  -a ADMIN, --admin ADMIN
+                        Set it "1" when you like to set a admin. (Only for
+                        contributors method)
 
-- --method: Defines the method in the context. See the API description.
-- --id: Defines the id of the project
-- --token: Defines the token to access the api.
-- --file: Defines the outPath for the file. Is empty the module will display the result in the console at once.
+```
 
 ### Requirements
 
