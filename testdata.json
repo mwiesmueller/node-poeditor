@@ -1,0 +1,21 @@
+[
+
+    {
+        "term": "one project found",
+        "context": "",
+        "reference": "\/projects",
+        "plural": "%d projects found",
+        "comment": "Make sure you translate the plural forms",
+        "tags": [
+            "first_tag",
+            "second_tag"
+        ]
+    },
+    {
+        "term": "Show all projects now",
+        "context": "",
+        "reference": "\/projects",
+        "plural": "",
+        "tags": "just_a_tag"
+    }
+]

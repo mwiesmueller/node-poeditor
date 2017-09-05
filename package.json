@@ -12,6 +12,7 @@
   "author": "Martin Wiesmüller <martin.wiesmueller@werbas-ag.com> (werbasinnotec.com)",
   "license": "MIT",
   "dependencies": {
+    "argparse": "1.0.9",
     "flaschenpost": "0.15.6",
     "processenv": "0.1.1",
     "request": "2.81.0",

@@ -68,7 +68,7 @@ This function will response all projects by your access token from the api and c
 ##### Running by CLI Command:
 
 ```
-poeditor --context=projects --method=list --token=<yourToken> --file=<yourFilePath>
+poeditor -t <YourAPIKey> -c projects -m list
 ```
 
 #### &bull; view
@@ -104,7 +104,7 @@ const id = 12345;  // <= The unique identifier of the project. It's possible to 
 ##### Running by CLI Command:
 
 ```
-poeditor --context=projects --method=view --id=<projectid> --token=<yourToken> --file=<yourFilePath>
+poeditor -t <YourAPIKey> -c projects -m view -id <ProjectID>
 ```
 
 #### &bull; add
@@ -138,6 +138,12 @@ const token = 'abcdef';
 })();
 ```
 
+##### Running by CLI Command:
+
+```
+poeditor -t <YourAPIKey> -c projects -m add -n 'Fine Project' -d 'Iam a description'
+```
+
 #### &bull; update
 
 ##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#projects_update))
@@ -154,7 +160,7 @@ const id = 12345; // <= The unique identifier of your project.
 
 (async () => {
   try {
-    const res = await poconnect.projects.add(token, id, { name, description, refLang });
+    const res = await poconnect.projects.update(token, id, { name, description, refLang });
 
     // res => {  "project": {
             "id": 7717,
@@ -171,6 +177,12 @@ const id = 12345; // <= The unique identifier of your project.
     // err => returns an error when failed
   }
 })();
+```
+
+##### Running by CLI Command:
+
+```
+poeditor -t <YourAPIKey> -c projects -m update -id <YourProjectID> -n 'Fine Project name update' -d 'Iam a new description'
 ```
 
 #### &bull; delete
@@ -192,6 +204,13 @@ const id = '1234';
   }
 })();
 ```
+
+##### Running by CLI Command:
+
+```
+poeditor -t <YourAPIKey> -id <YourProjectID> -c projects -m delete
+```
+
 
 #### &bull; sync
 
@@ -236,6 +255,13 @@ const terms = [
 ```
 
 With this method it's possible to sync your terms in your project.
+
+
+##### Running by CLI Command:
+
+```
+poeditor -t <YourAPIKey> -id <YourProjectID> -c projects -m sync -daf <YourDataFilePath>
+```
 
 #### &bull; export
 
@@ -323,6 +349,13 @@ const token = 'abcdef';
 })();
 ```
 
+##### Running by CLI Command:
+
+```
+poeditor -t <YourAPIKey> -c languages -m available
+```
+
+
 #### &bull; list
 
 ##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#languages_list))
@@ -359,6 +392,12 @@ const id = 1234;
 })();
 ```
 
+##### Running by CLI Command:
+
+```
+poeditor -t <YourAPIKey> -c languages -m list -id <YourProjectID>
+```
+
 #### &bull; add
 
 ##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#languages_add))
@@ -382,6 +421,12 @@ const lang = 'de'
 
 With this method it's possible to add a additional language to an exist project. You cann fetch the languagecodes over the method `list`
 
+##### Running by CLI Command:
+
+```
+poeditor -t <YourAPIKey> -c languages -m add -id <YourProjectID> -l <YourLanguageCode>
+```
+
 #### &bull; delete
 
 ##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#languages_delete))
@@ -404,6 +449,12 @@ const lang = 'de'
 ```
 
 With this function it's possible to delete an language by project.
+
+##### Running by CLI Command:
+
+```
+poeditor -t <YourAPIKey> -c languages -m delete -id <YourProjectID> -l <YourLanguageCode>
+```
 
 ### Terms
 
@@ -485,6 +536,12 @@ const id = 1234;
 })();
 ```
 
+##### Running by CLI Command:
+
+```
+poeditor -t <YourAPIKey> -c terms -m list -id <YourProjectID>
+```
+
 #### &bull; add
 
 ##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#terms_add))
@@ -535,6 +592,12 @@ const terms = [
   }
 })();
 
+```
+
+##### Running by CLI Command:
+
+```
+poeditor -t <YourAPIKey> -c terms -m add -id <YourProjectID> -daf <YourDataFilePath>
 ```
 
 #### &bull; update
@@ -589,6 +652,12 @@ const terms = [
 
 ```
 
+##### Running by CLI Command:
+
+```
+poeditor -t <YourAPIKey> -c terms -m update -id <YourProjectID> -daf <YourDataFilePath>
+```
+
 #### &bull; delete
 
 ##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#terms_delete))
@@ -641,6 +710,12 @@ const terms = [
 
 ```
 
+##### Running by CLI Command:
+
+```
+poeditor -t <YourAPIKey> -c terms -m delete -id <YourProjectID> -daf <YourDataFilePath>
+```
+
 ### Contributors
 
 #### &bull; list
@@ -651,10 +726,11 @@ const terms = [
 const poconnect = require('node-poeditor');
 const token = 'abcdef';
 const id = 1234;
+const lang = 'de'; // Optional
 
 (async () => {
   try {
-    const res = await poconnect.contributors.list(token, id);
+    const res = await poconnect.contributors.list(token, id, lang);
 
     // res => { "contributors": [
             {
@@ -675,6 +751,12 @@ const id = 1234;
     // err => returns an error when failed
   }
 })();
+```
+
+##### Running by CLI Command:
+
+```
+poeditor -t <YourAPIKey> -c contributors -m list -id <YourProjectID> -l de
 ```
 
 #### &bull; add
@@ -703,6 +785,12 @@ cosnt obj = {
 })();
 ```
 
+##### Running by CLI Command:
+
+```
+poeditor -t <YourAPIKey> -c contributors -m add -id <YourProjectID> -n 'Martin' -e  'm.wiesmueller@werbasinnotec.com' -admin 1 -l de
+```
+
 #### &bull; remove
 
 ##### => ([Click hier to see the api docs](https://poeditor.com/docs/api#contributors_remove))
@@ -712,7 +800,6 @@ const poconnect = require('node-poeditor');
 const token = 'abcdef';
 const id = 1234;
 cosnt obj = {
-  name: 'Martin Wiesmüller',  // Required: Set the name of the contributor
   email: 'm.wiesmueller@werbasinnotec.com', // Required: Set the email of the contributor
   language: 'en'
 }
@@ -726,6 +813,12 @@ cosnt obj = {
     // err => returns an error when failed
   }
 })();
+```
+
+##### Running by CLI Command:
+
+```
+poeditor -t <YourAPIKey> -c contributors -m remove -id <YourProjectID> -e 'm.wiesmueller@werbasinnotec.com' -l de
 ```
 
 ## You like to fork it??
