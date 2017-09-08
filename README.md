@@ -62,7 +62,7 @@ Optional arguments:
 
 ### Requirements
 
-You must have at least Node v8 installed since this module works with async await.
+Install Node v8 at least since this module works with async await.
 
 
 ### Use module in your project
@@ -184,9 +184,9 @@ poeditor -t <YourAPIKey> -c projects -m add -n 'Fine Project' -d 'Iam a descript
 ```
 const poconnect = require('node-poeditor');
 
-const name = 'A new name for your project';
-const description = 'A new description for your project';
-const refLang = 'Set a new reference_language in your project';
+const name = 'Projectname'; // A new name for your project
+const description = 'Description'; // A new description for your project
+const refLang = 'en'; // Set a new reference_language in your project
 
 const token = 'abcdef';
 const id = 12345; // <= The unique identifier of your project.
@@ -801,8 +801,8 @@ const poconnect = require('node-poeditor');
 const token = 'abcdef';
 const id = 1234;
 cosnt obj = {
-  name: 'Martin Wiesmüller',  // Required: Set the name of the contributor
-  email: 'm.wiesmueller@werbasinnotec.com', // Required: Set the email of the contributor
+  name: 'Mister cool',  // Required: Set the name of the contributor
+  email: 'email@example.com', // Required: Set the email of the contributor
   language: 'de', // Set the language for the contributor
   admin: '1' // Set it to `1` when you like that the contributor is an administrator
 }
@@ -833,7 +833,7 @@ const poconnect = require('node-poeditor');
 const token = 'abcdef';
 const id = 1234;
 cosnt obj = {
-  email: 'm.wiesmueller@werbasinnotec.com', // Required: Set the email of the contributor
+  email: 'email@example.com', // Required: Set the email of the contributor
   language: 'en'
 }
 
@@ -854,7 +854,7 @@ cosnt obj = {
 poeditor -t <YourAPIKey> -c contributors -m remove -id <YourProjectID> -e 'm.wiesmueller@werbasinnotec.com' -l de
 ```
 
-## You like to fork it??
+## Development Information
 
 When you like to fork this module, you must set some ENV Variables to running the tests.
 

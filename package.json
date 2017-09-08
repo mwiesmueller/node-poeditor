@@ -1,6 +1,6 @@
 {
   "name": "node-poeditor",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A node module to send translations to the po editor api",
   "main": "lib/index.js",
   "scripts": {
